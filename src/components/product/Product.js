@@ -1,7 +1,7 @@
 function Product(props){
     return(
         <div id={props.id} className='product'>
-            <li>{props.name}</li>
+            <h1>{props.name}</h1>
         </div>
     )
 }

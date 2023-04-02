@@ -1,26 +1,37 @@
 import Product from "../product/Product";
+import { Route, Link, Routes as Switch } from 'react-router-dom';
+import { fetchProducts, selectProducts } from "./ProductListSlice";
+import { useDispatch, useSelector } from 'react-redux';
 
-const { useEffect, useState } = require("react");
-
+const { useEffect, } = require("react");
 function ProductList(){
-    let [products, setProducts] = useState([{name: 'Sorry we have some troubles', id: 404}]);
-    async function getProducts(){
-        let data = await fetch("http://localhost:3000/products");
-        let response = await data.json()
-        console.log(products)
-        setProducts(response.products);
-    }
-    useEffect(()=>{
-        getProducts();
-    }, []);
+    const dispatch = useDispatch();
+    let products = [];
+    products = useSelector(selectProducts);
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
     return(
         <div>
             <ul>
-            {Array.isArray(products) &&
-          products.map((product) => (
-            <Product key={product.id} id = {product.id} name={product.name}/>
-          ))}
+                {Array.isArray(products) && products.map((product) => (
+                    <li key={product.id}>
+                        <Link to={`/product/${product.id}`}>{product.name}</Link>
+                    </li>
+                ))}
             </ul>
+            <Switch>
+                <Route path="/product/:id" render={({ match }) => {
+                    const productId = parseInt(match.params.id);
+                    const product = products.find(p => p.id === productId);
+                    if (product) {
+                        return <Product id={product.id} name={product.name} />;
+                    } else {
+                        return <div>Product not found</div>;
+                    }
+                }} />
+            </Switch>
         </div>
     )
     
