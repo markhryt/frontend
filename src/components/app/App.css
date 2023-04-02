@@ -1,0 +1,108 @@
+html{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+#top-text{
+  position: fixed;
+  left: 2%;
+}
+.searchBar{
+  position: fixed;
+  right: 12.5%;
+  top: 8%;
+}
+
+header{
+  background-color: aqua;
+  position: fixed;
+  width: 100%;
+  height: 15%;
+  top:0;
+  right: 0;
+  z-index: 1;
+  border-bottom: 3px solid black;
+}
+
+.account{
+  position: fixed;
+  right: 1%;
+  top: 0.01%;
+}
+.account{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login{
+  background-color: rgb(10, 215, 17);
+  color: white;
+  border: none;
+  text-align: center;
+
+}
+
+.login:hover{
+  background-color:  rgb(9, 150, 14);
+}
+
+.element{
+  margin: 3px;
+  width: 3.5rem;
+  height: 1.3rem;
+}
+
+.register{
+  background-color: rgb(255, 59, 59);
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+.register:hover{
+  background-color: rgb(165, 14, 14);
+}
+.ProductList{
+  position: relative;
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+@media (max-width: 700px) {
+  .welcome{
+    display: block;
+  }
+  .searchBar{
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome{
+    font-size: 0.7em;
+  }
+  .dear{
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 1350px) {
+  .searchBar{
+    width:15%;
+  }
+  #search{
+    height: 100%;
+    width: 100%;
+  }
+  .account{
+    right: 5%;
+    width:10%;
+  }
+  .header{
+    height: 10%;
+  }
+}
