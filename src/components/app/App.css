@@ -70,7 +70,15 @@ header{
 
 }
 
+.element{
+  position: relative;
+  margin-top: 30%;
+  left: 5%;
+}
 
+.element li{
+  display: block;
+}
 
 @media (max-width: 700px) {
   .welcome{
@@ -87,6 +95,11 @@ header{
   }
   .dear{
     font-size: 0.7em;
+  }
+  .home{
+    position: relative;
+    margin-top: 50%;
+    left: 5%;
   }
 }
 

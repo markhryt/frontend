@@ -1,26 +1,29 @@
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 import SearchBar from "../searchbar/SearchBar";
+import { Link} from "react-router-dom";
+import { isLoged, selectUsername } from "./HeaderSlice";
+import { useDispatch, useSelector } from "react-redux";
+import Navbar from "./navbar/Navbar";
 function Header(){
+    const dispatch = useDispatch();
+    let userName = "";
+    userName = useSelector(selectUsername);
+    useEffect(()=>{
+      dispatch(isLoged());
+    }, [dispatch]);
 
-    async function getUserName(){
-        let data = await fetch( "http://localhost:3000/username");
-        let response = await data.json();
-        setUserName(response.userName);
-      }
-      let [userName, setUserName]= useState('Customer');
-      useEffect(()=>{
-        getUserName();
-      }, [])
     return(
         <header>
         <h1 id='top-text'><span className='welcome'>Welcome,</span> <span className='dear'>dear {userName}</span></h1>
+          <Navbar/>
           <div className='searchBar'>
            <SearchBar/>
          </div>
          <div className='account'>
-         <button className='login element'>login</button>
-
-         <button className='register element'>register</button>
+          <Link to="/login"><button className='login element'>login</button></Link>
+         
+        <Link to="/register"><button className='register element'>register</button></Link>
+         
 
          </div>
      </header>

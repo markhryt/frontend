@@ -2,28 +2,22 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
-
+import Home from '../home/Home';
 import Header from '../header/Header';
 import ProductList from '../ProductsList/ProductsList';
 function App() {
 
   return (
-    <div className="App">
-      <Router>
-        <Header/>
-
-      <div className='ProductList'>
+    <Router>
+      <div className="App">
+        <Header />
         <ProductList/>
       </div>
-      </Router>
-     
-     
-        
-    </div>
+    </Router>
   );
 }
 

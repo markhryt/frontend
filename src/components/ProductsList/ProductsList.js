@@ -1,36 +1,18 @@
-import Product from "../product/Product";
-import { Route, Link, Routes as Switch } from 'react-router-dom';
-import { fetchProducts, selectProducts } from "./ProductListSlice";
-import { useDispatch, useSelector } from 'react-redux';
-
-const { useEffect, } = require("react");
+import Product from "../products/Products";
+import { Route, Routes as Switch } from 'react-router-dom';
+import Login from "../account/Login";
+import Register from "../account/Register";
+import Home from "../home/Home";
 function ProductList(){
-    const dispatch = useDispatch();
-    let products = [];
-    products = useSelector(selectProducts);
 
-    useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
     return(
         <div>
-            <ul>
-                {Array.isArray(products) && products.map((product) => (
-                    <li key={product.id}>
-                        <Link to={`/product/${product.id}`}>{product.name}</Link>
-                    </li>
-                ))}
-            </ul>
             <Switch>
-                <Route path="/product/:id" render={({ match }) => {
-                    const productId = parseInt(match.params.id);
-                    const product = products.find(p => p.id === productId);
-                    if (product) {
-                        return <Product id={product.id} name={product.name} />;
-                    } else {
-                        return <div>Product not found</div>;
-                    }
-                }} />
+                <Route path="/home" element={<div className='element'><Home/></div>} />
+                <Route path={'/products'} element={<div className="element"><Product/></div>}/>
+                <Route path = "/login" element={<div className="element"><Login/></div>}/>
+                <Route path = "/register" element={<div className="element"><Register/></div>}/>
+                
             </Switch>
         </div>
     )

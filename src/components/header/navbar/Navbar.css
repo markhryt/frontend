@@ -1,0 +1,8 @@
+ul{
+    position: fixed;
+    top:0;
+}
+.navbar li{
+    display: inline;
+    color: red;
+}

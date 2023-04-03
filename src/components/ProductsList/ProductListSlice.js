@@ -14,23 +14,23 @@ const productListSlice = createSlice({
   initialState: {
      products: [],
      isLoadingProducts: false,
-     hasErrorPopular: false
+     hasErrorProducts: false
  },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
         state.isLoadingProducts = true;
-        state.hasErrorPopular = false;
+        state.hasErrorProducts = false;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.products = action.payload;
         state.isLoadingProducts = false;
-        state.hasErrorPopular = false;
+        state.hasErrorProducts = false;
       })
       .addCase(fetchProducts.rejected, (state) => {
         state.isLoadingProducts = false;
-        state.hasErrorPopular = true;
+        state.hasErrorProducts = true;
       });
   },
 });
