@@ -1,11 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+import axios from 'axios';
 export const isLoged = createAsyncThunk(
-  'header/isLoged',
+  'header/getUsername',
   async () => {
-    const response = await fetch('http://localhost:3000/username');
-    const data = await response.json();
-    return data.userName;
+    try{
+   
+    let response = await axios.get('http://localhost:3000/username',
+    {withCredentials:true});
+    return response.data;
+    }catch (error) {
+      throw Error(error.message);
+    }
   }
 );
 
@@ -24,7 +29,7 @@ const headerSlice = createSlice({
         state.hasErrorUsername = false;
       })
       .addCase(isLoged.fulfilled, (state, action) => {
-        state.username = action.payload;
+        state.username = action.payload.userName;
         state.isLoadingUsername = false;
         state.hasErrorUsername = false;
       })

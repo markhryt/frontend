@@ -4,6 +4,7 @@ html{
 #top-text{
   position: fixed;
   left: 2%;
+  top: 2%;
 }
 .searchBar{
   position: fixed;
@@ -26,8 +27,6 @@ header{
   position: fixed;
   right: 1%;
   top: 0.01%;
-}
-.account{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,11 +44,12 @@ header{
   background-color:  rgb(9, 150, 14);
 }
 
-.element{
+.account button{
   margin: 3px;
   width: 3.5rem;
   height: 1.3rem;
 }
+
 
 .register{
   background-color: rgb(255, 59, 59);
@@ -61,22 +61,14 @@ header{
 .register:hover{
   background-color: rgb(165, 14, 14);
 }
-.ProductList{
-  position: relative;
-  margin-top: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
 
 .element{
   position: relative;
-  margin-top: 30%;
+  top: 10rem;
   left: 5%;
 }
 
-.element li{
+.product li{
   display: block;
 }
 

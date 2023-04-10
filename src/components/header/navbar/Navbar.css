@@ -1,8 +1,9 @@
-ul{
+.navbar ul{
     position: fixed;
-    top:0;
+    top: 0px;
 }
 .navbar li{
     display: inline;
     color: red;
+    margin-right: 15px;
 }
