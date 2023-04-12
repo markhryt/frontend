@@ -16,7 +16,6 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {
     isLoggedIn: false,
-    userId: null,
     isLoading: false,
     error: null,
   },
@@ -24,9 +23,6 @@ const authSlice = createSlice({
     logout: (state) => {
       state.isLoggedIn = false;
       state.user = null;
-    },
-    setUserData: (state, action)=>{
-        state.userData = action.payload
     },
   },
   extraReducers: (builder) => {
@@ -51,9 +47,8 @@ export const {setUserData} = authSlice.actions;
 
 
 
-export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
-export const selectUserData = (state) => state.auth.userData;
-export const selectIsLoading = (state) => state.auth.isLoading;
+export const selectIsLoggedIn = (state) => state.login.isLoggedIn;
+export const selectIsLoading = (state) => state.login.isLoading;
 export const selectError = (state) => state.auth.error;
 
 

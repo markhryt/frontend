@@ -1,4 +1,4 @@
-import { setUserData, login} from "./LoginSlice"
+import {login} from "./LoginSlice"
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 export default function Login(){
@@ -12,7 +12,6 @@ export default function Login(){
         };
         console.log(JSON.stringify(userData));
         navigate('/');
-        dispatch(setUserData(JSON.stringify(userData)));
         dispatch(login(userData));
         
       }
