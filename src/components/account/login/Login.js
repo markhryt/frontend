@@ -10,7 +10,6 @@ export default function Login(){
           email: event.target.email.value,
           password: event.target.password.value
         };
-        console.log(JSON.stringify(userData));
         navigate('/');
         dispatch(login(userData));
         

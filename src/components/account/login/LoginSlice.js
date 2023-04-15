@@ -4,11 +4,8 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
   try {
     const {response} = await axios.post('http://localhost:3000/login',
     {email: userData.email, password: userData.password}, {withCredentials: true});
-    console.log(response);
-    console.log(response);
-    
   } catch (error) {
-    throw Error(error.message);
+    throw Error(error.message); 
   }
 });
 
