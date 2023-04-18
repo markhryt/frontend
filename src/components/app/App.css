@@ -72,6 +72,33 @@ header{
   display: block;
 }
 
+.productpage{
+  position: relative;
+  top: 10rem;
+}
+.navbar ul{
+  position: fixed;
+  top: 0px;
+}
+.navbar li{
+  display: inline;
+  color: red;
+  margin-right: 15px;
+}
+
+@media (min-width: 1350px) {
+  #search{
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 390) {
+  #search{
+    width: 10%;
+  }
+}
+
+
 @media (max-width: 700px) {
   .welcome{
     display: block;

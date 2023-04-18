@@ -12,7 +12,6 @@ export default function Login(){
         };
         navigate('/');
         dispatch(login(userData));
-        
       }
 
     return(

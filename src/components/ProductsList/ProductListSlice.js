@@ -1,11 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
   'productList/fetchProducts',
   async () => {
-    const response = await fetch('http://localhost:3000/products');
-    const data = await response.json();
-    return data.products;
+    const response = await axios.get("http://localhost:3000/products");
+    return response.data.products;
+  }
+);
+
+export const searchProducts = createAsyncThunk(
+  "products/searchProducts",
+  async (searchTerm) => {
+    const response = await axios.get(`http://localhost:3000/products/${searchTerm}`);
+    return response.data.products;
   }
 );
 
@@ -31,7 +39,20 @@ const productListSlice = createSlice({
       .addCase(fetchProducts.rejected, (state) => {
         state.isLoadingProducts = false;
         state.hasErrorProducts = true;
-      });
+      })
+      .addCase(searchProducts.pending, (state)=>{
+        state.isLoadingProducts = true;
+        state.hasErrorProducts = false;
+      })
+      .addCase(searchProducts.rejected, (state)=>{
+        state.isLoadingProducts = false;
+        state.hasErrorProducts = true;
+      })
+      .addCase(searchProducts.fulfilled, (state, action)=>{
+        state.isLoadingProducts = false;
+        state.hasErrorProducts = false;
+        state.products=action.payload;
+      })
   },
 });
 

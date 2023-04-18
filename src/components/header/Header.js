@@ -3,17 +3,16 @@ import SearchBar from "../searchbar/SearchBar";
 import { Link, useLocation} from "react-router-dom";
 import { isLoged, selectUsername } from "./HeaderSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../account/login/LoginSlice";
+import { selectIsLoggedIn, isUserLoggedIn } from "../account/login/LoginSlice";
 import Navbar from "./navbar/Navbar";
 function Header(){
     const dispatch = useDispatch();
-    let userName = "";
-    let isLoggedIn = false;
     const location = useLocation();
-    userName = useSelector(selectUsername);
-    isLoggedIn = useSelector(selectIsLoggedIn);
+    let userName = useSelector(selectUsername);
+    let isLoggedIn = useSelector(selectIsLoggedIn);
     useEffect(()=>{
       dispatch(isLoged());
+      dispatch(isUserLoggedIn());;
     });
     if(!isLoggedIn){
       return(

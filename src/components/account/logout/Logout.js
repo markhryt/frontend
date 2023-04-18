@@ -6,7 +6,7 @@ export default function Logout(){
     const navigate = useNavigate();
     function handleSubmit(event){
         event.preventDefault();
-        sessionStorage.removeItem('myKey');
+        // sessionStorage.removeItem('myKey');
         dispatch(logoutUser());
         navigate('/');
     }

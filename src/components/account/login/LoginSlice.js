@@ -9,12 +9,24 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
   }
 });
 
+export const isUserLoggedIn = createAsyncThunk('auth/isLoggedIn', async (userData) => {
+  try {
+    let response = await axios.get('http://localhost:3000/isLoggedIn',
+    {withCredentials:true});
+    return response.data;
+  } catch (error) {
+    throw Error(error.message); 
+  }
+});
+
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
     isLoggedIn: false,
     isLoading: false,
     error: null,
+    isLoggedInLoading: false,
+    isLoggedInHasError: false,
   },
   reducers: {
     logout: (state) => {
@@ -29,14 +41,26 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(login.fulfilled, (state, action) => {
-        state.isLoggedIn = true;
         state.isLoading = false;
         state.error = null;
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error;
-      });
+      })
+      .addCase(isUserLoggedIn.pending, (state)=>{
+        state.isLoggedInLoading= true;
+        state.isLoggedInHasError = false;
+      })
+      .addCase(isUserLoggedIn.rejected, (state)=>{
+        state.isLoggedInLoading = false;
+        state.isLoggedInHasError = true;
+      })
+      .addCase(isUserLoggedIn.fulfilled, (state, action)=>{
+        state.isLoggedIn = action.payload.logged;
+        state.isLoggedInLoading = false;
+        state.isLoggedInHasError = false;
+      })
   },
 });
 
