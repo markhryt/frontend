@@ -17,10 +17,20 @@ const cartSlice = createSlice({
     addItem: (state, action) => {
       state.cartItems.push(action.payload);
     },
+    removeItem: (state, action) => {
+      const idToRemove = action.payload.idToRemove;
+      const index = state.cartItems.findIndex(item => item.id === Number(idToRemove));
+      if (index !== -1) {
+        state.cartItems.splice(index, 1);
+      } else {
+        state.cartItems = [];
+      }
+      
+    },
   },
 });
 
-export const { addItem, setCartItemsFromSessionStorage } = cartSlice.actions;
+export const { addItem, removeItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
 

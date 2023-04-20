@@ -5,23 +5,25 @@ import { fetchProducts, selectProducts, searchProducts } from "../ProductsList/P
 import { selectCart, addItem } from "../Cart/CartSlice";
 
 function Products(){
+    function updateStorage(){
+        sessionStorage.setItem('cart', JSON.stringify({items:cart}));
+    }
     const dispatch = useDispatch();
     let products = [{id:2, name: 't'}];
     products = useSelector(selectProducts);
     const location = useLocation();
     let currentlocation = location.pathname;
     let cart = useSelector(selectCart);
-  
     useEffect(()=>{
         if(currentlocation==="/products"){
             dispatch(fetchProducts());
         }
-        sessionStorage.setItem('cart', JSON.stringify({items:cart}));
-    }, [dispatch])
+        updateStorage();
+    })
     
     const handleAddToCart = (product) => {
         dispatch(addItem(product));
-        console.log(cart);
+        updateStorage();
       }
 
     return(

@@ -17,6 +17,7 @@ function ProductList(){
                 <Route path = "/register" element={<div className="element"><RegistrationForm/></div>}/>
                 <Route path = "logout" element={<div className="element"><Logout/></div>}/>
                 <Route path = '/products/:id' element = {<div><ProductPage/></div>}/>
+                <Route path = '/cart/:id' element = {<div><ProductPage/></div>}/>
                 <Route path = '/products/search' element = {<div className="element"><Product/></div>}/>
                 <Route path="/cart" element={<div className='element'><Cart/></div>} />
             </Switch>
