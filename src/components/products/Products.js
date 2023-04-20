@@ -2,27 +2,26 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, selectProducts, searchProducts } from "../ProductsList/ProductListSlice";
+import { selectCart, addItem } from "../Cart/CartSlice";
 
 function Products(){
- 
     const dispatch = useDispatch();
     let products = [{id:2, name: 't'}];
     products = useSelector(selectProducts);
     const location = useLocation();
     let currentlocation = location.pathname;
-    const [cart, setCart] = useState([]);
+    let cart = useSelector(selectCart);
   
     useEffect(()=>{
         if(currentlocation==="/products"){
             dispatch(fetchProducts());
         }
-    }, [dispatch])
-  
-    const handleAddToCart = (product) => {
-        const updatedCart = [...cart, product];
-        setCart(updatedCart);
         sessionStorage.setItem('cart', JSON.stringify({items:cart}));
-        
+    }, [dispatch])
+    
+    const handleAddToCart = (product) => {
+        dispatch(addItem(product));
+        console.log(cart);
       }
 
     return(

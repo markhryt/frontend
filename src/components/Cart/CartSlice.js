@@ -1,28 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+function handleCartState(){
+  if(JSON.parse(sessionStorage.getItem('cart'))){
+    return JSON.parse(sessionStorage.getItem('cart')).items 
+  }else{
+    return [];
+  }
+}
+
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: [],
+  initialState: {
+    cartItems: handleCartState(),
+  },
   reducers: {
     addItem: (state, action) => {
-      const { id, quantity } = action.payload;
-      const existingItemIndex = state.findIndex(item => item.id === id);
-      if (existingItemIndex !== -1) {
-        state[existingItemIndex].quantity += quantity;
-      } else {
-        state.push({ id, quantity });
-      }
-    },
-    editQuantityById: (state, action) => {
-      const { id, quantity } = action.payload;
-      const itemIndex = state.findIndex(item => item.id === id);
-      if (itemIndex !== -1) {
-        state[itemIndex].quantity = quantity;
-      }
+      state.cartItems.push(action.payload);
     },
   },
 });
 
-export const { addItem, editQuantityById } = cartSlice.actions;
+export const { addItem, setCartItemsFromSessionStorage } = cartSlice.actions;
 
 export default cartSlice.reducer;
+
+export const selectCart = (state)=>state.cart.cartItems;
