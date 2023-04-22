@@ -10,8 +10,8 @@ export default function Login(){
           email: event.target.email.value,
           password: event.target.password.value
         };
-        navigate('/');
         dispatch(login(userData));
+        navigate('/');
       }
 
     return(

@@ -18,6 +18,8 @@ function Products(){
         if(currentlocation==="/products"){
             dispatch(fetchProducts());
         }
+    }, [dispatch]);
+    useEffect(()=>{
         updateStorage();
     })
     

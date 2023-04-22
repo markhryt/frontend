@@ -6,6 +6,8 @@ import Home from "../home/Home";
 import Logout from "../account/logout/Logout";
 import ProductPage from "../productPage/ProductPage";
 import Cart from "../Cart/Cart";
+import PlaceOrder from "../PlaceOrder/PlaceOrder";
+import ThanksForOrder from "../PlaceOrder/ThanksForOrder";
 function ProductList(){
   
     return(
@@ -19,7 +21,9 @@ function ProductList(){
                 <Route path = '/products/:id' element = {<div><ProductPage/></div>}/>
                 <Route path = '/cart/:id' element = {<div><ProductPage/></div>}/>
                 <Route path = '/products/search' element = {<div className="element"><Product/></div>}/>
-                <Route path="/cart" element={<div className='element'><Cart/></div>} />
+                <Route exact path="/cart" element={<div className='element'><Cart/></div>} />
+                <Route exact path="/cart/placeorder" element={<div className='element'><PlaceOrder/></div>} />
+                <Route exact path="/cart/placeorder/thankyou" element={<div className='element'><ThanksForOrder/></div>} />
             </Switch>
         </div>
     )

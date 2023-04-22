@@ -43,7 +43,7 @@ function Cart(){
                          <button onClick={handleRemoveItem} value = {item.id}>remove from cart</button></li>
                         ))}
                     </ul>
-                    <Link>Place order</Link>
+                    <Link to = 'placeorder'>Place order</Link>
                 </div>
             )
         }else{
