@@ -12,6 +12,7 @@ function Navbar(){
                 <li><Link to ="/">Home</Link></li>
                 <li onClick={handleProducts}><Link to='/products'>Products</Link></li>
                 <li><Link to="/cart">Cart</Link></li>
+                <li><Link to ='/account'>Account</Link></li>
             </ul>
         </nav>
     )

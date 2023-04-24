@@ -7,6 +7,7 @@ import LogoutSlice from "../account/logout/LogoutSlice";
 import ProductsPageSlice from "../productPage/ProductsPageSlice";
 import CartSlice from "../Cart/CartSlice";
 import PlaceOrderSlice from "../PlaceOrder/PlaceOrderSlice";
+import AccountSlice from "../account/AccountPage/AccountSlice";
 export default configureStore({
     reducer: {
         productList: ProductListSlice,
@@ -17,5 +18,6 @@ export default configureStore({
         producPage: ProductsPageSlice,
         cart: CartSlice,
         placeOrder: PlaceOrderSlice,
+        account: AccountSlice,
     }
 })

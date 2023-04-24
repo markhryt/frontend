@@ -8,6 +8,8 @@ import ProductPage from "../productPage/ProductPage";
 import Cart from "../Cart/Cart";
 import PlaceOrder from "../PlaceOrder/PlaceOrder";
 import ThanksForOrder from "../PlaceOrder/ThanksForOrder";
+import Account from "../account/AccountPage/Account";
+import AccountInfoPage from "../account/AccountPage/AccountInfoPage";
 function ProductList(){
   
     return(
@@ -17,13 +19,15 @@ function ProductList(){
                 <Route path={'/products'} element={<div className="element"><Product/></div>}/>
                 <Route path = "/login" element={<div className="element"><Login/></div>}/>
                 <Route path = "/register" element={<div className="element"><RegistrationForm/></div>}/>
-                <Route path = "logout" element={<div className="element"><Logout/></div>}/>
+                <Route path = "/logout" element={<div className="element"><Logout/></div>}/>
+                <Route path = "/account" element={<div className="element"><Account/></div>}/>
                 <Route path = '/products/:id' element = {<div><ProductPage/></div>}/>
                 <Route path = '/cart/:id' element = {<div><ProductPage/></div>}/>
                 <Route path = '/products/search' element = {<div className="element"><Product/></div>}/>
                 <Route exact path="/cart" element={<div className='element'><Cart/></div>} />
                 <Route exact path="/cart/placeorder" element={<div className='element'><PlaceOrder/></div>} />
                 <Route exact path="/cart/placeorder/thankyou" element={<div className='element'><ThanksForOrder/></div>} />
+                <Route exact path="/account/accountinfo" element={<div className='element'><AccountInfoPage/></div>} />
             </Switch>
         </div>
     )
