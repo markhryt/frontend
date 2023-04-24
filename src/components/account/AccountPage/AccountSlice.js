@@ -31,7 +31,7 @@ export const AccountSlice = createSlice({
   name: 'account',
   initialState: {
     userInfo: null,
-    orders: null,
+    orders: [],
     isLoading: false,
     error: null,
   },
@@ -66,3 +66,5 @@ export const AccountSlice = createSlice({
 export default AccountSlice.reducer;
 
 export const selectAccountInfo = (state) => state.account.userInfo;
+
+export const selectOrders = (state) => state.account.orders;

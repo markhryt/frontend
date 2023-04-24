@@ -20,7 +20,7 @@ export default function Account(){
                 <h2>Options</h2>
                 <ul>
                     <li><Link to = 'accountinfo'>Account Information</Link></li>
-                    <li><Link to = 'ordershistory'>Orders History</Link></li>
+                    <li><Link to = 'orders'>Orders History</Link></li>
                 </ul>
             </div>
         )

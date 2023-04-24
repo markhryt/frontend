@@ -10,6 +10,8 @@ import PlaceOrder from "../PlaceOrder/PlaceOrder";
 import ThanksForOrder from "../PlaceOrder/ThanksForOrder";
 import Account from "../account/AccountPage/Account";
 import AccountInfoPage from "../account/AccountPage/AccountInfoPage";
+import Orders from "../Orders/Orders";
+import OrderPage from "../Orders/OrderPage";
 function ProductList(){
   
     return(
@@ -28,6 +30,8 @@ function ProductList(){
                 <Route exact path="/cart/placeorder" element={<div className='element'><PlaceOrder/></div>} />
                 <Route exact path="/cart/placeorder/thankyou" element={<div className='element'><ThanksForOrder/></div>} />
                 <Route exact path="/account/accountinfo" element={<div className='element'><AccountInfoPage/></div>} />
+                <Route exact path="/account/orders" element={<div className='element'><Orders/></div>} />
+                <Route exact path="/account/orders/:id" element={<div className='element'><OrderPage/></div>} />
             </Switch>
         </div>
     )
