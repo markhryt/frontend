@@ -6,7 +6,7 @@ export const fetchOrderDescription = createAsyncThunk(
   async (orderId) => {
     try {
       const response = await axios.get(`http://localhost:3000/account/orders/${orderId}`, { withCredentials: true });
-      return response.data;
+      return response.data[0];
     } catch (error) {
       return (error.response.data);
     }
