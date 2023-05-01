@@ -1,6 +1,9 @@
 html{
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
+.product-image{
+  width: 10rem;
+}
 #top-text{
   position: fixed;
   left: 2%;

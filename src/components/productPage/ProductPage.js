@@ -5,15 +5,24 @@ import { getProduct } from "./ProductsPageSlice";
 import { selectProductName } from "./ProductsPageSlice";
 export default function ProductPage(){
     const dispatch = useDispatch();
-    let productName = useSelector(selectProductName);
+    let product = useSelector(selectProductName);
     let {id} = useParams();
     useEffect(()=>{
         dispatch(getProduct(id));
-    })
-    
-    return(
-        <div className="productpage">
-            <h1>{productName}</h1>
-        </div>
-    )
+    }, [dispatch]);
+    if(!product){
+        return(
+            <div  className="productpage">
+                <h1>Product</h1>
+            </div>
+        )
+    }else{
+        return(
+            <div className="productpage">
+                <img src = {product.img_url} className = "product-image"/>
+                <h1>{product.name.charAt(0).toUpperCase() + product.name.slice(1)}</h1>
+            </div>
+        )
+    }
+
 }

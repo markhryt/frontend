@@ -9,6 +9,7 @@ import CartSlice from "../Cart/CartSlice";
 import PlaceOrderSlice from "../PlaceOrder/PlaceOrderSlice";
 import AccountSlice from "../account/AccountPage/AccountSlice";
 import OrderDescriptionSlice from "../Orders/OrderDescriptionSlice";
+import CategoriesSlice from "../Categories/CategoriesSlice";
 export default configureStore({
     reducer: {
         productList: ProductListSlice,
@@ -16,10 +17,11 @@ export default configureStore({
         login: LoginSlice,
         register: RegisterSlice,
         logout: LogoutSlice,
-        producPage: ProductsPageSlice,
+        productPage: ProductsPageSlice,
         cart: CartSlice,
         placeOrder: PlaceOrderSlice,
         account: AccountSlice,
         orderDescription: OrderDescriptionSlice,
+        categories: CategoriesSlice,
     }
 })

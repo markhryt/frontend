@@ -10,7 +10,8 @@ export default function Account(){
     if(!userIsLoggedIn){
         return(
             <div>
-                <h1>Please log in to view Account</h1>
+                <h2>Please Log in to view the account information</h2>
+                <Link to = "/login">Login</Link>
             </div>
         )
     }else{

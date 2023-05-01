@@ -12,6 +12,10 @@ import Account from "../account/AccountPage/Account";
 import AccountInfoPage from "../account/AccountPage/AccountInfoPage";
 import Orders from "../Orders/Orders";
 import OrderPage from "../Orders/OrderPage";
+import Categories from "../Categories/Categories";
+import CategoryPage from "../CategoryPage/CategoryPage";
+import Verifyemail from "../account/register/VerifyEmail";
+import PostConfirm from "../account/register/PostConfirm";
 function ProductList(){
   
     return(
@@ -23,8 +27,10 @@ function ProductList(){
                 <Route path = "/register" element={<div className="element"><RegistrationForm/></div>}/>
                 <Route path = "/logout" element={<div className="element"><Logout/></div>}/>
                 <Route path = "/account" element={<div className="element"><Account/></div>}/>
-                <Route path = '/products/:id' element = {<div><ProductPage/></div>}/>
-                <Route path = '/cart/:id' element = {<div><ProductPage/></div>}/>
+                <Route path = "/categories" element={<div className="element"><Categories/></div>}/>
+                <Route path = '/products/:id' element = {<div className='element'><ProductPage/></div>}/>
+                <Route path = '/cart/:id' element = {<div className='element'><ProductPage/></div>}/>
+                <Route path = '/categories/:id' element = {<div className='element'><CategoryPage/></div>}/>
                 <Route path = '/products/search' element = {<div className="element"><Product/></div>}/>
                 <Route exact path="/cart" element={<div className='element'><Cart/></div>} />
                 <Route exact path="/cart/placeorder" element={<div className='element'><PlaceOrder/></div>} />
@@ -32,6 +38,8 @@ function ProductList(){
                 <Route exact path="/account/accountinfo" element={<div className='element'><AccountInfoPage/></div>} />
                 <Route exact path="/account/orders" element={<div className='element'><Orders/></div>} />
                 <Route exact path="/account/orders/:id" element={<div className='element'><OrderPage/></div>} />
+                <Route path = "/register/verifyemail" element={<div className="element"><Verifyemail/></div>}/>
+                <Route path = "/register/verifyemail/postconfirm" element={<div className="element"><PostConfirm/></div>}/>
             </Switch>
         </div>
     )

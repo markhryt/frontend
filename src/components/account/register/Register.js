@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  registerUser
+  setUserData,
+  verifyemail
 } from './RegisterSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -10,15 +11,16 @@ export default function RegistrationForm() {
     const dispatch = useDispatch();
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate('/');
+        navigate('verifyemail');
         const userData = {
             email: event.target.email.value,
-            full_name: event.target.full_name.value,
-            address: event.target.address.value,
             password: event.target.password.value,
+            address: event.target.address.value,
+            full_name: event.target.full_name.value,
           };
-        // dispatch an action to register the user
-        dispatch(registerUser(userData))
+
+        dispatch(setUserData(userData));
+        dispatch(verifyemail(userData.email));
     };
 
     return (

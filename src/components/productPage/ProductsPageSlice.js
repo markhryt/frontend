@@ -5,11 +5,11 @@ export const getProduct = createAsyncThunk(
   async (id) => {
     const response = await fetch('http://localhost:3000/products/getproduct/'+id);
     const data = await response.json();
-    return data.name;
+    return data;
   }
 );
 
-const producPage = createSlice({
+const ProductsPageSlice = createSlice({
   name: 'productList',
   initialState: {
      product: {name: "unknown"},
@@ -24,7 +24,7 @@ const producPage = createSlice({
         state.hasErrorProduct = false;
       })
       .addCase(getProduct.fulfilled, (state, action) => {
-        state.product.name = action.payload;
+        state.product = action.payload;
         state.isLoadingProduct = false;
         state.hasErrorProduct = false;
       })
@@ -35,6 +35,6 @@ const producPage = createSlice({
   },
 });
 
-export default producPage.reducer;
+export default ProductsPageSlice.reducer;
 
-export const selectProductName = (state) => state.producPage.product.name;
+export const selectProductName = (state) => state.productPage.product.product;

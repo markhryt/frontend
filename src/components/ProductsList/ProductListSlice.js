@@ -17,6 +17,15 @@ export const searchProducts = createAsyncThunk(
   }
 );
 
+export const fetchProductsByCategory = createAsyncThunk(
+  'productList/fetchProductsByCategory',
+  async (category_name) => {
+    const response = await axios.get(`http://localhost:3000/${category_name}/getproducts`);
+    return response.data.products;
+  }
+);
+
+
 const productListSlice = createSlice({
   name: 'productList',
   initialState: {
@@ -52,6 +61,19 @@ const productListSlice = createSlice({
         state.isLoadingProducts = false;
         state.hasErrorProducts = false;
         state.products=action.payload;
+      })
+      .addCase(fetchProductsByCategory.pending, (state) => {
+        state.isLoadingProducts = true;
+        state.hasErrorProducts = false;
+      })
+      .addCase(fetchProductsByCategory.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.isLoadingProducts = false;
+        state.hasErrorProducts = false;
+      })
+      .addCase(fetchProductsByCategory.rejected, (state) => {
+        state.isLoadingProducts = false;
+        state.hasErrorProducts = true;
       })
   },
 });

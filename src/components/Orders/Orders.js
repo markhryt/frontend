@@ -8,7 +8,8 @@ export default function Orders(){
     useEffect(()=>{
         dispatch(fetchOrders());
     }, [dispatch])
-    if(!orders.length){
+    try{
+        if(orders.length<1){
         return(
             <div>
                 <h1>Orders</h1>
@@ -21,10 +22,20 @@ export default function Orders(){
                     <Link to = {order.id}>
                     <h3>order id: {order.id}</h3>
                     <p>amount: {order.amount}</p>
+                    <p>date: {order.date}</p>
                     </Link>
                    </li>)}
             </div>
         )
     }
+    }catch{
+          return(
+            <div>
+                <h1>Your orders will be diplayed here. Please log in or register</h1>
+                <Link to = "/login">Login</Link>
+            </div>
+        )
+    }
+ 
 
 }

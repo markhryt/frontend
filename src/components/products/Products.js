@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, selectProducts, searchProducts } from "../ProductsList/ProductListSlice";
+import { fetchProducts, selectProducts } from "../ProductsList/ProductListSlice";
 import { selectCart, addItem } from "../Cart/CartSlice";
 
 function Products(){
@@ -9,7 +9,7 @@ function Products(){
         sessionStorage.setItem('cart', JSON.stringify({items:cart}));
     }
     const dispatch = useDispatch();
-    let products = [{id:2, name: 't'}];
+    let products = [{id:0, name: ''}];
     products = useSelector(selectProducts);
     const location = useLocation();
     let currentlocation = location.pathname;
@@ -33,7 +33,7 @@ function Products(){
             <h1>Products</h1>
             <ul>
                 {products.map((product) => (
-                <li key={product.id}><Link to={`/products/${product.id}`}>{product.name}</Link>
+                <li key={product.id}><img src = {product.img_url} className='product-image'/><Link to={`/products/${product.id}`}>{product.name}</Link>
                  <button onClick={() => handleAddToCart(product)}>add to cart</button></li>
                 ))}
             </ul>
