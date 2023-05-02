@@ -1,12 +1,24 @@
-import { useParams } from "react-router"
+import { useEffect } from "react";
+import { useParams, useLocation } from "react-router"
 import Products from "../products/Products";
+import { useDispatch } from "react-redux";
+import { fetchProductsByCategory } from "../ProductsList/ProductListSlice";
 
 export default function CategoryPage(){
     const { id } = useParams();
-    id.toLowerCase();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const category = queryParams.get('category');
+
+    console.log(category)
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(fetchProductsByCategory(id))
+    })
+
     return(
         <div>
-            <h1>{ id.charAt(0).toUpperCase() + id.slice(1)}</h1>
+            <h1>{ category}</h1>
             <Products/>
         </div>
     )

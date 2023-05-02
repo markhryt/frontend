@@ -1,13 +1,15 @@
 html{
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-.product-image{
-  width: 10rem;
+
+body{
+  background-color: rgb(203, 231, 255);
 }
+
 #top-text{
-  position: fixed;
-  left: 2%;
-  top: 2%;
+  position: relative;
+  left: 1rem;
+  top: 3rem;
 }
 .searchBar{
   position: fixed;
@@ -15,15 +17,24 @@ html{
   top: 8%;
 }
 
+.about{
+  display: flexbox;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  width: 80%;
+}
+
+
 header{
-  background-color: aqua;
+  background-color:rgb(104, 181, 249);
   position: fixed;
   width: 100%;
-  height: 15%;
+  height: 10rem;
   top:0;
   right: 0;
   z-index: 1;
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 3%;
 }
 
 .account{
@@ -33,6 +44,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2px;
 }
 
 .login{
@@ -67,26 +79,79 @@ header{
 
 .element{
   position: relative;
-  top: 10rem;
+  top: 11rem;
   left: 5%;
+  width: 90%;
+  right: 5%;
+}
+.product ul{
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product li{
-  display: block;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  border: solid 1px;
+  margin: 1rem;
+  height: 15rem;
+  width: 10rem;
+  background-color: beige;
+  padding: 3px;
+  border-radius: 2%;
+  justify-content: space-evenly ;
 }
 
+.product .link{
+  grid-row-start: 6;
+  grid-row-end: 7;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  width: 100%;
+  text-align: center;
+}
+.product button{
+  grid-row-start: 7;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.product-image{
+  grid-row-start: 1;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  object-fit:scale-down;
+}
+
+.navbar{
+  background-color:rgb(34, 105, 193);
+  width: 20.8rem;
+  height: 1.2rem;
+  position: fixed;
+  top: -1rem;
+  padding: 0.5rem;
+  border: solid 1px blue;
+}
 .productpage{
   position: relative;
-  top: 10rem;
-}
-.navbar ul{
-  position: fixed;
-  top: 0px;
 }
 .navbar li{
   display: inline;
-  color: red;
+  color: aliceblue;;
   margin-right: 15px;
+}
+.navbar a:visited{
+  color:rgb(177, 207, 234);
+}
+.navbar a:hover{
+  color:darkgrey
 }
 
 @media (min-width: 1350px) {
@@ -97,35 +162,48 @@ header{
 }
 @media (max-width: 390) {
   #search{
-    width: 10%;
+    width: 1rem;
+  }
+  html {
+    font-size: 7px;
   }
 }
 
 
 @media (max-width: 700px) {
+  html {
+    font-size: 10px;
+  }
   .welcome{
     display: block;
   }
   .searchBar{
-    right: 5%;
+    right: 1rem;
+    top: 10rem;
+  }
+  .account{
+    right:5rem;
+    width: 10rem;
+  }
+  .navbar{
+    width: 25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .welcome{
-    font-size: 0.7em;
+  html {
+    font-size: 9px;
   }
-  .dear{
-    font-size: 0.7em;
-  }
-  .home{
-    position: relative;
-    margin-top: 50%;
-    left: 5%;
+  .account{
+    right: 1.5rem;
+    width: 2rem;
   }
 }
 
 @media (min-width: 1350px) {
+  html {
+    font-size: 24px;
+  }
   .searchBar{
     width:15%;
   }

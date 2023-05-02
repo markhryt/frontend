@@ -1,4 +1,4 @@
-import Product from "../products/Products";
+import Products from "../products/Products";
 import { Route, Routes as Switch } from 'react-router-dom';
 import Login from "../account/login/Login";
 import RegistrationForm from "../account/register/Register";
@@ -22,7 +22,7 @@ function ProductList(){
         <div>
             <Switch>
                 <Route path="/" element={<div className='element'><Home/></div>} />
-                <Route path={'/products'} element={<div className="element"><Product/></div>}/>
+                <Route path={'/products'} element={<div className="element"><Products/></div>}/>
                 <Route path = "/login" element={<div className="element"><Login/></div>}/>
                 <Route path = "/register" element={<div className="element"><RegistrationForm/></div>}/>
                 <Route path = "/logout" element={<div className="element"><Logout/></div>}/>
@@ -31,7 +31,7 @@ function ProductList(){
                 <Route path = '/products/:id' element = {<div className='element'><ProductPage/></div>}/>
                 <Route path = '/cart/:id' element = {<div className='element'><ProductPage/></div>}/>
                 <Route path = '/categories/:id' element = {<div className='element'><CategoryPage/></div>}/>
-                <Route path = '/products/search' element = {<div className="element"><Product/></div>}/>
+                <Route path = '/products/search' element = {<div className="element"><Products/></div>}/>
                 <Route exact path="/cart" element={<div className='element'><Cart/></div>} />
                 <Route exact path="/cart/placeorder" element={<div className='element'><PlaceOrder/></div>} />
                 <Route exact path="/cart/placeorder/thankyou" element={<div className='element'><ThanksForOrder/></div>} />

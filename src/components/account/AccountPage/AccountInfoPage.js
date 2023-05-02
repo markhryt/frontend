@@ -10,8 +10,6 @@ export default function AccountInfoPage(){
     useEffect(()=>{
         dispatch(fetchUserInfo());
     },[dispatch]);
-    const date = new Date().toISOString().slice(0, 10);
-    console.log(date);
     if(!isLoggedIn || !accountInfo){
         return(
             <div>

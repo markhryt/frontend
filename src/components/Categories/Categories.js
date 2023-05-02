@@ -14,7 +14,7 @@ export default function Categories(){
             <div>
                 <h1>Categories</h1>
                 <ul>
-                    {categories.map(element=><li key = {element.id} onClick={()=>dispatch(fetchProductsByCategory(element.id))}><Link to = {`${element.name}`}>{element.name}</Link></li>)}
+                    {categories.map(element=><li key = {element.id} onClick={()=>dispatch(fetchProductsByCategory(element.id))}><Link to = {`${element.id}?category=${element.name}`}>{element.name}</Link></li>)}
                 </ul>
             </div>
         )

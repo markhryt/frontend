@@ -6,7 +6,6 @@ import { fetchOrders } from "./AccountSlice";
 export default function Account(){
     let userIsLoggedIn = useSelector(selectIsLoggedIn);
     let userName = useSelector(selectUsername);
-    const dispatch = useDispatch();
     if(!userIsLoggedIn){
         return(
             <div>

@@ -33,8 +33,11 @@ function Products(){
             <h1>Products</h1>
             <ul>
                 {products.map((product) => (
-                <li key={product.id}><img src = {product.img_url} className='product-image'/><Link to={`/products/${product.id}`}>{product.name}</Link>
-                 <button onClick={() => handleAddToCart(product)}>add to cart</button></li>
+                <li key={product.id}>
+                <img src = {product.img_url} className='product-image'/>
+                <Link to={`/products/${product.id}`} className='link'>{product.name}</Link>
+                <button onClick={() => handleAddToCart(product)}>add to cart</button>
+               </li>
                 ))}
             </ul>
         </div>
