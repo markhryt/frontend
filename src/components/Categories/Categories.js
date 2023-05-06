@@ -11,10 +11,11 @@ export default function Categories(){
     },[dispatch])
     try{
         return(
-            <div>
+            <div className="categories">
                 <h1>Categories</h1>
                 <ul>
-                    {categories.map(element=><li key = {element.id} onClick={()=>dispatch(fetchProductsByCategory(element.id))}><Link to = {`${element.id}?category=${element.name}`}>{element.name}</Link></li>)}
+                    {categories.map(element=><li key = {element.id} onClick={()=>dispatch(fetchProductsByCategory(element.id))}>
+                    <Link to = {`${element.id}?category=${element.name}`}>{element.name}</Link></li>)}
                 </ul>
             </div>
         )

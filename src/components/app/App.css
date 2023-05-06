@@ -14,11 +14,24 @@ body{
 .searchBar{
   position: fixed;
   right: 12.5%;
-  top: 8%;
+  top: 7rem;
+  height: 1.5rem;
+
+}
+.searchBar button{
+  height: 1.75rem;
+}
+
+.searchBar input[type=text] {
+  background-color: white;
+  background-image: url('/Users/markhrytchak/Documents/codecademy/e-commerce/frontend/src/searchicon.png');
+  padding-left: 40px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  height: 2rem;
 }
 
 .about{
-  display: flexbox;
   align-items: center;
   font-family: 'Inter', sans-serif;
   width: 80%;
@@ -52,7 +65,6 @@ header{
   color: white;
   border: none;
   text-align: center;
-
 }
 
 .login:hover{
@@ -61,10 +73,142 @@ header{
 
 .account button{
   margin: 3px;
-  width: 3.5rem;
+  width: 4rem;
   height: 1.3rem;
 }
 
+.login-page{
+  display: flex;
+  justify-content: center;
+}
+
+.login-form{
+  display: inline-grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr 0.5fr 0.5fr;
+}
+
+.login-form h1{
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.login-form ul{
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.login-form li{
+  margin: 1rem;
+  text-align: center;
+}
+
+.login-form button{
+  grid-row-start: 3;
+  grid-column-start: 2;
+  width: 40%;
+  height: 40%;
+  align-self: center;
+  justify-self: center;
+  background-color: rgb(236, 221, 221);
+  border-radius: 20%;
+  border: 1px;
+  font-size: large;
+}
+
+.login-form button:hover{
+  background-color: rgb(153, 149, 149);
+}
+.login-form p{
+  grid-row-start: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.login-form a{
+  grid-row-start: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  align-self: flex-start;
+  justify-self: center;
+}
+
+.registration-form{
+  background-color: rgb(121, 153, 233); 
+  border: 1px rgb(183, 183, 238) solid; 
+  display: inline-grid;
+  width: 80%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  padding-inline-start: 0;
+}
+
+
+.registration-form li{
+  color: aliceblue;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  width: 100%;
+  margin: 1rem;
+  justify-self: center;
+  text-align: center;
+  list-style: none;
+}
+
+.registration-form p{
+  grid-row-start: 7;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  align-self: center;
+  justify-self: center;
+}
+
+.registration-form a{
+  grid-row-start: 8;
+  grid-column-start: 3;
+  align-self:flex-start;
+  justify-self: center;
+}
+.registration-form h1{
+  grid-row-start: 1;
+  grid-column-start: 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.register-page{
+display: flex;
+justify-content: center;
+}
+
+.register-page form{
+  display: flex;
+  justify-content: center;
+  }
+
+.registration-form button{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  width: 50%;
+  height: 50%;
+  justify-self: center;
+  background-color: rgb(255, 255, 82);
+  border-radius: 20%;
+  font-size: large;
+}
+
+.registration-form button:hover{
+  background-color:rgb(161, 161, 41);
+}
 
 .register{
   background-color: rgb(255, 59, 59);
@@ -77,18 +221,67 @@ header{
   background-color: rgb(165, 14, 14);
 }
 
+.verify-email{
+  text-align: center;
+  height: 20rem;
+}
+
+.verify-email form{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
+}
+
+.verify-email label{
+  grid-column-start: 2;
+  grid-row-start: 1;
+  font-size: large;
+  align-self: flex-end;
+}
+
+.verify-email #code{
+  grid-column-start: 2;
+  grid-row-start: 2;
+  width: 80%;
+  height: 30%;
+  align-self: center;
+  justify-self: center;
+  border: 1.3px solid black;
+  border-radius: 5%;
+}
+
+input[type=number]:focus {
+  border: 3px solid #555;
+  padding: 3px;
+}
+
+.verify-email button{
+  grid-column-start: 2;
+  grid-row-start: 3;
+  width: 50%;
+  height: 40%;
+  align-self: flex-start;
+  justify-self: center;
+}
+
 .element{
   position: relative;
-  top: 11rem;
+  top: 12rem;
   left: 5%;
   width: 90%;
   right: 5%;
 }
+
 .product ul{
-  background-color: white;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   justify-content: center;
+  padding-inline-start: 0;
+}
+
+.product h1{
+  text-align: center;
 }
 
 .product li{
@@ -103,6 +296,11 @@ header{
   padding: 3px;
   border-radius: 2%;
   justify-content: space-evenly ;
+}
+
+.product li:hover{
+  background-color:rgb(180, 180, 148) ;
+  padding: 10px;
 }
 
 .product .link{
@@ -132,7 +330,7 @@ header{
 
 .navbar{
   background-color:rgb(34, 105, 193);
-  width: 20.8rem;
+  width: 100%;
   height: 1.2rem;
   position: fixed;
   top: -1rem;
@@ -150,16 +348,114 @@ header{
 .navbar a:visited{
   color:rgb(177, 207, 234);
 }
+.navbar a{
+  color:rgb(177, 207, 234);
+}
 .navbar a:hover{
-  color:darkgrey
+  color:darkgrey;
 }
 
-@media (min-width: 1350px) {
-  #search{
-    height: 100%;
-    width: 100%;
-  }
+.categories h1{
+  text-align: center;
 }
+
+.categories ul{
+  padding-inline-start: 0;
+  text-align: center;
+}
+
+.categories li{
+  list-style: none;
+  margin: 2rem;
+  font-size: large;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  color:rgb(48, 225, 225);
+}
+
+.categories a:hover{
+  color:rgb(53, 198, 198);
+}
+
+.categories a:visited{
+  color:rgb(132, 161, 248);
+}
+
+.account-page ul{
+  padding-inline-start: 0;
+  text-align: center;
+}
+
+.account-page h2{
+  text-align: center;
+}
+.account-page h1{
+  text-align: center;
+  border-bottom: 2px solid gray;
+  padding-bottom: 5px;
+}
+
+.account-page  a:visited{
+  color:rgb(0, 0, 0);
+}
+
+.account-page li{
+  list-style: none;
+  margin: 2rem;
+  font-size: large;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  color:rgb(0, 0, 0);
+}
+
+.account-info{
+  text-align: center;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 2fr;
+  width:100%;
+}
+
+.account-info h1{
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  justify-self: center;
+  align-self: center;
+}
+
+.account-info ul{
+  grid-row-start: 2;
+  grid-column-start: 3;
+  justify-self: center;
+  align-self: center;
+
+}
+
+.account-info li{
+  list-style: none;
+  margin: 2rem;
+  font-size: large;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  color:rgb(0, 0, 0);
+}
+
+.orders li{
+  list-style: none;
+  border-bottom: #555 solid 1px;
+}
+.orders a{
+  color: black;
+}
+
+.order-page li{
+  list-style: none;
+  margin:2rem;
+  font-size: medium;
+}
+
+
 @media (max-width: 390) {
   #search{
     width: 1rem;
@@ -183,10 +479,24 @@ header{
   }
   .account{
     right:5rem;
-    width: 10rem;
+
   }
-  .navbar{
-    width: 25rem;
+  .account button{
+    font-size: x-small;
+    margin: 3px;
+    width: 5rem;
+    height: 1.5em;
+  }
+  .searchBar input[type=text] {
+
+    height: 4rem;
+  }
+  .searchBar button {
+
+    height: 4rem;
+  }
+  .element{
+    top:15rem;
   }
 }
 
@@ -195,21 +505,15 @@ header{
     font-size: 9px;
   }
   .account{
-    right: 1.5rem;
-    width: 2rem;
+    right: 4rem;
+    width: 1rem;
+    top: 2rem;
   }
 }
 
 @media (min-width: 1350px) {
   html {
     font-size: 24px;
-  }
-  .searchBar{
-    width:15%;
-  }
-  #search{
-    height: 100%;
-    width: 100%;
   }
   .account{
     right: 5%;
@@ -218,4 +522,9 @@ header{
   .header{
     height: 10%;
   }
+  .searchBar input[type=text] {
+
+    height: 1.75rem;
+  }
+  
 }

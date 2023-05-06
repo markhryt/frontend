@@ -19,12 +19,12 @@ export default function AccountInfoPage(){
         )
     }else{
         return(
-            <div>
-                <h1>Account Info</h1>
+            <div className="account-info">
+                <h1>Account Information</h1>
                 <ul>
-                    <li>user name: {accountInfo.userName}</li>
-                    <li>email: {accountInfo.email}</li>
-                    <li>address: {accountInfo.address}</li>
+                    <li>User name:  <br/> {accountInfo.userName}</li>
+                    <li>Email: <br/> {accountInfo.email}</li>
+                    <li>address:  <br/> {accountInfo.address || 'none'}</li>
                 </ul>
             </div>
         )

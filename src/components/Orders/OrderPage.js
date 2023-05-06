@@ -30,11 +30,11 @@ export default function OrderPage(){
     }else{
            let organizedDescription=countItems(orderDescription);
             return(
-                <div>
+                <div className="order-page">
                     <h1>Order {id}</h1>
                     <ul>
                             {organizedDescription.map((item) => (
-                            <li key={item.id}>Name:{item.name}, quantity: {item.amount}, id: {item.id}</li>
+                            <li key={item.id}>Name: {item.name}, quantity: {item.amount}, id: {item.id}</li>
                             ))}
                         </ul>
                 </div>

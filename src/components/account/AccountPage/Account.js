@@ -15,7 +15,7 @@ export default function Account(){
         )
     }else{
         return(
-            <div>
+            <div className="account-page">
                 <h1>{userName}</h1>
                 <h2>Options</h2>
                 <ul>

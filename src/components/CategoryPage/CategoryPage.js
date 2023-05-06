@@ -9,8 +9,6 @@ export default function CategoryPage(){
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const category = queryParams.get('category');
-
-    console.log(category)
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchProductsByCategory(id))

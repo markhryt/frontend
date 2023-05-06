@@ -17,7 +17,7 @@ export default function Orders(){
         )
     }else{
         return(
-            <div>
+            <div className="orders">
                 {orders.map((order)=><li key = {order.id}>
                     <Link to = {order.id}>
                     <h3>order id: {order.id}</h3>
