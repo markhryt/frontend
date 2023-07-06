@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from "axios";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const fetchProducts = createAsyncThunk(
   'productList/fetchProducts',
   async () => {
-    const response = await axios.get("http://localhost:3000/products");
+    const response = await axios.get(BASE_URL+"/products");
     return response.data.products;
   }
 );
@@ -12,7 +13,7 @@ export const fetchProducts = createAsyncThunk(
 export const searchProducts = createAsyncThunk(
   "products/searchProducts",
   async (searchTerm) => {
-    const response = await axios.get(`http://localhost:3000/products/${searchTerm}`);
+    const response = await axios.get(`${BASE_URL}/products/${searchTerm}`);
     return response.data.products;
   }
 );
@@ -20,7 +21,7 @@ export const searchProducts = createAsyncThunk(
 export const fetchProductsByCategory = createAsyncThunk(
   'productList/fetchProductsByCategory',
   async (category_name) => {
-    const response = await axios.get(`http://localhost:3000/${category_name}/getproducts`);
+    const response = await axios.get(`${BASE_URL}/${category_name}/getproducts`);
     return response.data.products;
   }
 );

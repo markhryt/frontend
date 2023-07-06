@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const getProduct = createAsyncThunk(
   'productPage/getProduct',
   async (id) => {
-    const response = await fetch('http://localhost:3000/products/getproduct/'+id);
+    const response = await fetch(BASE_URL+'products/getproduct/'+id);
     const data = await response.json();
     return data;
   }

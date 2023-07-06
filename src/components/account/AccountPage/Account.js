@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../login/LoginSlice";
 import { selectUsername } from "../../header/HeaderSlice";
 import { Link } from "react-router-dom";
-import { fetchOrders } from "./AccountSlice";
+
 export default function Account(){
     let userIsLoggedIn = useSelector(selectIsLoggedIn);
     let userName = useSelector(selectUsername);

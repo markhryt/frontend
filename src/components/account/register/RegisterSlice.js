@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const registerUser = createAsyncThunk('auth/registerUser',
     async (userData) => {
       try {
-        const response = await axios.post('http://localhost:3000/register', userData, { withCredentials: true });
+        const response = await axios.post(BASE_URL+'/register', userData, { withCredentials: true });
         return response.data;
       } catch (error) {
         throw Error(error.message);
@@ -16,7 +17,7 @@ export const verifyemail = createAsyncThunk(
   'auth/verifyemail',
   async (email) => {
     try {
-      const response = await axios.post('http://localhost:3000/verifyemail', {email: email});
+      const response = await axios.post(BASE_URL+'/verifyemail', {email: email});
       return response.data;
     } catch (error) {
       throw Error(error.message);

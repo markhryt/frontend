@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios' ;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export const login = createAsyncThunk('auth/login', async (userData) => {
   try {
-    const {response} = await axios.post('http://localhost:3000/login',
+    const {response} = await axios.post(BASE_URL+'/login',
     {email: userData.email, password: userData.password}, {withCredentials: true});
     return response.data;
   } catch (error) {
@@ -10,13 +12,13 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
   }
 });
 
-export const isUserLoggedIn = createAsyncThunk('auth/isLoggedIn', async (userData) => {
+export const isUserLoggedIn = createAsyncThunk('auth/isLoggedIn', async () => {
   try {
-    let response = await axios.get('http://localhost:3000/isLoggedIn',
+    let response = await axios.get(BASE_URL+'/isLoggedIn',
     {withCredentials:true});
     return response.data;
   } catch (error) {
-    throw Error(error.message); 
+    throw Error(error.message);
   }
 });
 

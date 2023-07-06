@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export const isLoged = createAsyncThunk(
   'header/getUsername',
   async () => {
     try{
    
-    let response = await axios.get('http://localhost:3000/username',
+    let response = await axios.get(BASE_URL+'/username',
     {withCredentials:true});
     return response.data;
     }catch (error) {

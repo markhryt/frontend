@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const logoutUser = createAsyncThunk(
   'logout/logoutUser',
   async () => {
     try {
-      const {response} = await axios.post('http://localhost:3000/logout',
+      const {response} = await axios.post(BASE_URL+'/logout',
       {message: "Log out"}, {withCredentials: true});
     } catch (error) {
       throw error.response.data;

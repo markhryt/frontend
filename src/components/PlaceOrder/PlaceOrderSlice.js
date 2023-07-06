@@ -1,20 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
-const countItems = (items) => {
-    const itemCounts = {};
-    items.forEach((item) => {
-      const { id, name } = item;
-      if (itemCounts[id]) {
-        itemCounts[id].amount += 1;
-      } else {
-        itemCounts[id] = { id, name, amount: 1 };
-      }
-    });
-    return Object.values(itemCounts);
-};
-
 // Async thunk that makes a POST request to the /placeorder route with credentials
 export const placeOrder = createAsyncThunk('placeOrder/post', async () => {
   try {

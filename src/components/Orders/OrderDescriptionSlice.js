@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const fetchOrderDescription = createAsyncThunk(
   "orderDescription/fetchOrderDescription",
   async (orderId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/account/orders/${orderId}`, { withCredentials: true });
+      const response = await axios.get(BASE_URL+`/account/orders/${orderId}`, { withCredentials: true });
       return response.data[0];
     } catch (error) {
       return (error.response.data);
