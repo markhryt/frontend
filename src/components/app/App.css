@@ -24,7 +24,7 @@ body{
 
 .searchBar input[type=text] {
   background-color: white;
-  background-image: url('/Users/markhrytchak/Documents/codecademy/e-commerce/frontend/src/searchicon.png');
+  background-image: url('./searchicon.png');
   padding-left: 40px;
   background-position: 10px 10px;
   background-repeat: no-repeat;
