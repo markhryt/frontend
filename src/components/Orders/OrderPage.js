@@ -21,7 +21,7 @@ export default function OrderPage(){
     };
     useEffect(()=>{
         dispatch(fetchOrderDescription(id));
-    }, [dispatch]);
+    }, [dispatch, id]);
     if(!orderDescription){
         return(
             <div>
