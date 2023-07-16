@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const fetchCategories = createAsyncThunk(
   'productList/fetchCategories',
   async () => {
-    const response = await axios.get(BASE_URL+"categories");
+    const response = await axios.get(BASE_URL+"/categories");
     return response.data.products;
   }
 );
