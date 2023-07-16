@@ -9,7 +9,7 @@ export default function ProductPage(){
     let {id} = useParams();
     useEffect(()=>{
         dispatch(getProduct(id));
-    }, [dispatch]);
+    }, [dispatch, id]);
     if(!product){
         return(
             <div  className="productpage">
@@ -19,7 +19,7 @@ export default function ProductPage(){
     }else{
         return(
             <div className="productpage">
-                <img src = {product.img_url} className = "product-image"/>
+                <img src = {product.img_url} className = "productpage-image" alt="product"/>
                 <h1>{product.name.charAt(0).toUpperCase() + product.name.slice(1)}</h1>
             </div>
         )

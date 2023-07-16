@@ -340,6 +340,9 @@ input[type=number]:focus {
 .productpage{
   position: relative;
 }
+.productpage-image{
+  width: 25rem;
+}
 .navbar li{
   display: inline;
   color: aliceblue;;

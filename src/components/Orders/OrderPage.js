@@ -5,7 +5,8 @@ import { selectOrderDescription, fetchOrderDescription } from "./OrderDescriptio
 export default function OrderPage(){
     const dispatch = useDispatch();
     let orderDescription = useSelector(selectOrderDescription);
-    const {id} = useParams();
+    const params = useParams();
+    const id = params.id;
     const countItems = (items) => {
         const itemCounts = {};
         items.forEach((item) => {

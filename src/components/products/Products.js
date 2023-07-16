@@ -18,7 +18,7 @@ function Products(){
         if(currentlocation==="/products"){
             dispatch(fetchProducts());
         }
-    }, [dispatch]);
+    }, [dispatch, currentlocation]);
     useEffect(()=>{
         updateStorage();
     })
@@ -34,7 +34,7 @@ function Products(){
             <ul>
                 {products.map((product) => (
                 <li key={product.id}>
-                <img src = {product.img_url} className='product-image'/>
+                <img src = {product.img_url} className='product-image' alt ="product"/>
                 <Link to={`/products/${product.id}`} className='link'>{product.name}</Link>
                 <button onClick={() => handleAddToCart(product)}>add to cart</button>
                </li>

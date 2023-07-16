@@ -6,7 +6,7 @@ export const logoutUser = createAsyncThunk(
   'logout/logoutUser',
   async () => {
     try {
-      const {response} = await axios.post(BASE_URL+'/logout',
+      await axios.post(BASE_URL+'/logout',
       {message: "Log out"}, {withCredentials: true});
     } catch (error) {
       throw error.response.data;

@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { placeOrder } from "./PlaceOrderSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {selectIsLoggedIn} from "../account/login/LoginSlice";

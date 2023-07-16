@@ -1,13 +1,8 @@
 import './App.css';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useLocation
+  BrowserRouter as Router,useLocation
 } from "react-router-dom";
-import Home from '../home/Home';
 import Header from '../header/Header';
 import ProductList from '../ProductsList/ProductsList';
 function App() {
