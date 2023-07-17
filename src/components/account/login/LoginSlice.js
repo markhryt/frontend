@@ -6,6 +6,12 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
   try {
     const {response} = await axios.post(BASE_URL+'/login',
     {email: userData.email, password: userData.password}, {withCredentials: true});
+    // Extract cookies from the response headers
+    const cookies = response.headers['set-cookie'];
+    // Set the cookies in the browser
+    cookies.forEach(cookie => {
+      document.cookie = cookie;
+    });
     return response.data;
   } catch (error) {
     throw Error(error.message); 
