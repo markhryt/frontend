@@ -5,13 +5,14 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const login = createAsyncThunk('auth/login', async (userData) => {
   try {
     const {response} = await axios.post(BASE_URL+'/login',
-    {email: userData.email, password: userData.password}, {withCredentials: true});
-    // Extract cookies from the response headers
-    const cookies = response.headers['set-cookie'];
-    // Set the cookies in the browser
-    cookies.forEach(cookie => {
-      document.cookie = cookie;
-    });
+    {email: userData.email, password: userData.password}, {withCredentials: true}).then((response)=>{
+      console.log(response);
+      const sessionId = response.data.sessionId;
+      console.log(sessionId)
+      document.cookie = `sessionId=${sessionId}; secure; sameSite=none; max-age=${60 * 60 * 24}; path=/`;
+      // Set the sessionId in a cookie
+    })
+
     return response.data;
   } catch (error) {
     throw Error(error.message); 
