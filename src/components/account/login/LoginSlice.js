@@ -14,7 +14,8 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
 
 export const isUserLoggedIn = createAsyncThunk('auth/isLoggedIn', async () => {
   try {
-    let response = await axios.get(BASE_URL+'/isLoggedIn');
+    let response = await axios.get(BASE_URL+'/isLoggedIn',
+    {withCredentials:true});
     return response.data;
   } catch (error) {
     throw Error(error.message);
