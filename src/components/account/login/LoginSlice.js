@@ -7,7 +7,8 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
     const {response} = await axios.post(BASE_URL+'/login',
     {email: userData.email, password: userData.password}, {withCredentials: true}).then((response)=>{
       const sessionId = response.data.sessionId;
-      document.cookie = `sessionId=${sessionId}; secure; sameSite=none; max-age=${60 * 60 * 24}; path=/`;
+      document.cookie = `sessionId=${sessionId}; domain=splendid-tuxedo-frog.cyclic.app; secure; sameSite=none; max-age=${60 * 60 * 24}; path=/;`;
+
       // Set the sessionId in a cookie
     })
 
