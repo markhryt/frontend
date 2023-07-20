@@ -4,7 +4,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const login = createAsyncThunk('auth/login', async (userData) => {
   try {
-    const {response} = await axios.post(BASE_URL+'/login',
+    await axios.post(BASE_URL+'/login',
     {email: userData.email, password: userData.password}, {withCredentials: true});
     return 'login';
   } catch (error) {
