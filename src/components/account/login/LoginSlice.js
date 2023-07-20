@@ -6,7 +6,7 @@ export const login = createAsyncThunk('auth/login', async (userData) => {
   try {
     const {response} = await axios.post(BASE_URL+'/login',
     {email: userData.email, password: userData.password}, {withCredentials: true});
-    return response.data;
+    return 'login';
   } catch (error) {
     throw Error(error.message); 
   }
@@ -43,7 +43,7 @@ const authSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(login.fulfilled, (state, action) => {
+      .addCase(login.fulfilled, (state) => {
         state.isLoading = false;
         state.error = null;
       })
