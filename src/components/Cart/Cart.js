@@ -15,8 +15,8 @@ function Cart(){
     const handleRemoveItem = (event)=>{
         dispatch(removeItem({idToRemove: event.target.value, cart: cartItems}));
         updateStorage();
-        window.location.reload();
         navigate('/')
+        window.location.reload();
     }
 
     const countItems = (items) => {
