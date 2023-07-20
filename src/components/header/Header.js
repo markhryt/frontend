@@ -11,8 +11,8 @@ function Header(){
     let userName = useSelector(selectUsername);
     let isLoggedIn = useSelector(selectIsLoggedIn);
     useEffect(()=>{
+      dispatch(isUserLoggedIn());
       dispatch(isLoged());
-      dispatch(isUserLoggedIn());;
     }, [dispatch]);
     if(!isLoggedIn){
       return(
