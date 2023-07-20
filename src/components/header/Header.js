@@ -13,7 +13,7 @@ function Header(){
     useEffect(()=>{
       dispatch(isLoged());
       dispatch(isUserLoggedIn());;
-    });
+    }, [dispatch]);
     if(!isLoggedIn){
       return(
         <header  key={location.pathname}>
