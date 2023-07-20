@@ -14,7 +14,9 @@ export default function Login(){
           password: event.target.password.value
         };
         dispatch(login(userData));
-        navigate('/');
+        setTimeout(()=>{
+            navigate('/');
+        }, 1500)
       }
 
     if(isLoggedIn){
