@@ -6,8 +6,9 @@ export const placeOrder = createAsyncThunk('placeOrder/post', async () => {
   try {
     let cart=JSON.parse(sessionStorage.getItem('cart')).items;
     const response = await axios.post('/placeorder',
+    { withCredentials: true },
     {cart: cart},
-    { withCredentials: true });
+    );
     return response.data;
   } catch (error) {
     throw new Error(error.response.data);

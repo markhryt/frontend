@@ -1,9 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { removeItem, selectCart } from "./CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 function Cart(){
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     let cartItems = useSelector(selectCart);
     function updateStorage(){
@@ -15,7 +14,6 @@ function Cart(){
     const handleRemoveItem = (event)=>{
         dispatch(removeItem({idToRemove: event.target.value, cart: cartItems}));
         updateStorage();
-        navigate('/')
         window.location.reload();
     }
 
