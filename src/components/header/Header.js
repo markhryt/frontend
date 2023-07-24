@@ -27,9 +27,9 @@ function Header(){
                <SearchBar/>
               </div>
               <div className='account'>
-               <Link to="/login"><button className='login'>login</button></Link>
+               <Link to="/login"><button className='login'>Login</button></Link>
          
-                <Link to="/register"><button className='register'>register</button></Link>
+                <Link to="/register"><button className='register'>Register</button></Link>
               </div>
          </header>
          )

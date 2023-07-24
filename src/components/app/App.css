@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Nunito&family=Raleway:wght@600&family=Ubuntu:wght@500&display=swap');
+
 html{
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -10,6 +12,8 @@ body{
   position: relative;
   left: 1rem;
   top: 3rem;
+  font-weight: 200;
+  font-family: 'Ubuntu', sans-serif;
 }
 .searchBar{
   position: fixed;
@@ -19,7 +23,7 @@ body{
 
 }
 .searchBar button{
-  height: 1.75rem;
+  height: 2.3rem;
 }
 
 .searchBar input[type=text] {
@@ -37,7 +41,9 @@ body{
   width: 80%;
 }
 
-
+.home h1{
+  font-family: 'Ubuntu', sans-serif;
+}
 header{
   background-color:rgb(104, 181, 249);
   position: fixed;
@@ -53,7 +59,7 @@ header{
 .account{
   position: fixed;
   right: 1%;
-  top: 0.01%;
+  top: -5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +80,7 @@ header{
 .account button{
   margin: 3px;
   width: 4rem;
-  height: 1.3rem;
+  height: 1.5rem;
 }
 
 .login-page{
@@ -116,14 +122,15 @@ header{
   height: 40%;
   align-self: center;
   justify-self: center;
-  background-color: rgb(236, 221, 221);
+  background-color: rgb(36, 215, 51);
+  color: white;
   border-radius: 20%;
   border: 1px;
   font-size: large;
 }
 
 .login-form button:hover{
-  background-color: rgb(153, 149, 149);
+  background-color:  rgb(5, 142, 16);
 }
 .login-form p{
   grid-row-start: 4;
@@ -142,18 +149,16 @@ header{
 }
 
 .registration-form{
-  background-color: rgb(121, 153, 233); 
-  border: 1px rgb(183, 183, 238) solid; 
   display: inline-grid;
-  width: 80%;
+  width: 60%;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
   padding-inline-start: 0;
+  color: black;
 }
 
 
 .registration-form li{
-  color: aliceblue;
   grid-column-start: 3;
   grid-column-end: 4;
   width: 100%;
@@ -201,13 +206,16 @@ justify-content: center;
   width: 50%;
   height: 50%;
   justify-self: center;
-  background-color: rgb(255, 255, 82);
+  background-color: rgb(255, 0, 0);
+  color:white;
   border-radius: 20%;
   font-size: large;
+  box-shadow: 3px;
 }
 
 .registration-form button:hover{
-  background-color:rgb(161, 161, 41);
+  background-color:rgb(171, 0, 0);
+  box-shadow: none;
 }
 
 .register{
@@ -331,31 +339,59 @@ input[type=number]:focus {
 .navbar{
   background-color:rgb(34, 105, 193);
   width: 100%;
-  height: 1.2rem;
+  height: 2rem;
   position: fixed;
   top: -1rem;
   padding: 0.5rem;
   border: solid 1px blue;
 }
+
+
+.navbar li{
+  display: inline;
+  margin: 8px;
+  font-size: medium;
+}
+.navbar a{
+  font-family: 'Ubuntu', sans-serif;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.navbar a:visited{
+  color:aliceblue;
+}
+
+.navbar a:hover{
+  cursor: pointer;
+  color: gray;
+}
+.navbar a::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.navbar a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navbar a::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200, 100%, 30%);
+  z-index: -1;
+  transition: transform 1s ease;
+}
+
 .productpage{
   position: relative;
 }
 .productpage-image{
   width: 25rem;
-}
-.navbar li{
-  display: inline;
-  color: aliceblue;;
-  margin-right: 15px;
-}
-.navbar a:visited{
-  color:rgb(177, 207, 234);
-}
-.navbar a{
-  color:rgb(177, 207, 234);
-}
-.navbar a:hover{
-  color:darkgrey;
 }
 
 .categories h1{
@@ -482,7 +518,6 @@ input[type=number]:focus {
   }
   .account{
     right:5rem;
-
   }
   .account button{
     font-size: x-small;
@@ -496,10 +531,13 @@ input[type=number]:focus {
   }
   .searchBar button {
 
-    height: 4rem;
+    height: 4.5rem;
   }
   .element{
     top:15rem;
+  }
+  .navbar li{
+    font-size: small;
   }
 }
 
