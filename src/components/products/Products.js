@@ -29,17 +29,27 @@ function Products(){
       }
 
     return(
-        <div className='product'>
-            <h1>Products</h1>
-            <ul>
-                {products.map((product) => (
-                <li key={product.id}>
-                <img src = {product.img_url} className='product-image' alt ="product"/>
-                <Link to={`/products/${product.id}`} className='link'>{product.name}</Link>
-                <button className="btn btn-primary"onClick={() => handleAddToCart(product)}>add to cart</button>
-               </li>
-                ))}
-            </ul>
+        <div className='product container'>
+            <div className="row">
+                <span className="col"/>
+                <h1 className="col">Products</h1>
+                <span className="col"/>
+            </div>
+            
+            <div className="row">
+                <span className="col"/>
+                <ul className="col-9">
+                    {products.map((product) => (
+                    <li key={product.id}>
+                    <img src = {product.img_url} className='product-image' alt ="product"/>
+                    <Link to={`/products/${product.id}`} className='link'>{product.name}</Link>
+                    <button className="btn btn-primary"onClick={() => handleAddToCart(product)}>add to cart</button>
+                    </li>
+                    ))}
+                </ul>
+                <span className="col"/>
+            </div>
+
         </div>
     )
 }

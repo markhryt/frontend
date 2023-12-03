@@ -9,6 +9,7 @@
     flex-wrap:wrap;
     justify-content: center;
     padding-inline-start: 0;
+    max-width: 800px;
   }
   
   .product h1{
