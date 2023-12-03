@@ -1,0 +1,17 @@
+
+@import
+url('https://fonts.googleapis.com/css2?family=Kalam&family=Merriweather&family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap');
+
+.login-page h1{
+    font-family: 'Kalam', cursive;
+}
+
+li{
+  list-style-type: none;
+  align-self: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.login-page button{
+  font-size: 20px;
+}

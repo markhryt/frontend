@@ -1,8 +1,10 @@
+import "./Home.css";
 function Home(){
     return(
         <div className="home">
-            <h1>Homepage</h1>
+            <h1 class = "text-center">About Me</h1>
             <div className="about">
+            
             <p>
             Welcome to my e-commerce web app! I'm Mark Hrytchak, and I've developed this project from scratch as a full stack web app.
 
@@ -13,7 +15,7 @@ To build this project, I used React for the frontend, along with CSS styling to 
 Thanks for visiting my project! Please feel free to explore the site, add items to your cart, and let me know if you have any questions or feedback.
             </p>
             <br/>
-            <span>contact me: markhrytchak@gmail.com</span>
+            <p>contact me: hrytchakmark@hrytchak.com</p>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, selectProducts } from "../ProductsList/ProductListSlice";
 import { selectCart, addItem } from "../Cart/CartSlice";
-
+import "./Products.css";
 function Products(){
     function updateStorage(){
         sessionStorage.setItem('cart', JSON.stringify({items:cart}));
@@ -36,7 +36,7 @@ function Products(){
                 <li key={product.id}>
                 <img src = {product.img_url} className='product-image' alt ="product"/>
                 <Link to={`/products/${product.id}`} className='link'>{product.name}</Link>
-                <button onClick={() => handleAddToCart(product)}>add to cart</button>
+                <button className="btn btn-primary"onClick={() => handleAddToCart(product)}>add to cart</button>
                </li>
                 ))}
             </ul>

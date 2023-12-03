@@ -1,0 +1,11 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Kalam&family=Merriweather&family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap');
+
+.home{
+    font-family: 'Kalam', cursive;
+    padding-bottom: 10%;
+}
+
+.about{
+    padding: 5%;
+}

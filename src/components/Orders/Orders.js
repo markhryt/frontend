@@ -2,6 +2,7 @@ import { fetchOrders, selectOrders } from "../account/AccountPage/AccountSlice"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Orders.css";
 export default function Orders(){
     let orders = useSelector(selectOrders);
     const dispatch = useDispatch();
@@ -11,8 +12,10 @@ export default function Orders(){
     try{
         if(orders.length<1){
         return(
-            <div>
+            <div className="text-center">
                 <h1>Orders</h1>
+                <br/>
+                <h4>Your orders will be displayed here</h4>
             </div>
         )
     }else{

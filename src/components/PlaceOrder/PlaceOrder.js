@@ -14,7 +14,7 @@ export default function PlaceOrder(){
       };
     if(!isLoggedIn){
         return(
-            <div className="place-order">
+            <div className="place-order text-center">
             <h2>Please Log in to proceed the purchase</h2>
             <Link to="/login">Login</Link>
         </div>
@@ -22,11 +22,11 @@ export default function PlaceOrder(){
 
     }else{
         return(
-            <div className="place-order">
+            <div className="place-order text-center">
                 <h1>Order confirmation</h1>
                 <h2>Are you sure you want to add items in cart to your order?</h2>
                 <form onSubmit={handleSubmit}>
-                    <button type="submit">Submit</button>
+                    <button className="btn btn-lg btn-outline-success mt-5" type="submit">Submit</button>
                 </form>
             </div>
         )

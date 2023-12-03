@@ -5,16 +5,17 @@ export default function PostConfirm(){
     let userRegistered = useSelector(selectUserRegistered);
     if(userRegistered){
         return(
-            <div>
-                <h1>Thank you for registration</h1>
-                <Link to = "/login">Login</Link>
+            <div className="text-center">
+                <h1 >Thank you for registration!</h1>
+                <br/>
+                <Link to = "/login"><button className="btn btn-outline-secondary">Login</button></Link>
             </div>
         )
     }else{
         return(
             <div>
                 <h1>Registration Error</h1>
-                <Link to = 'register'>Register</Link>
+                <Link to = '/register'>Register</Link>
             </div>
         )
     }

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../login/LoginSlice";
 import { selectUsername } from "../../header/HeaderSlice";
 import { Link } from "react-router-dom";
-
+import "./AccountPage.css";
 export default function Account(){
     let userIsLoggedIn = useSelector(selectIsLoggedIn);
     let userName = useSelector(selectUsername);
@@ -17,7 +17,6 @@ export default function Account(){
         return(
             <div className="account-page">
                 <h1>{userName}</h1>
-                <h2>Options</h2>
                 <ul>
                     <li><Link to = 'accountinfo'>Account Information</Link></li>
                     <li><Link to = 'orders'>Orders History</Link></li>

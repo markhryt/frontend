@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Merriweather&family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap');
+
+  .product{
+    font-family: 'Kalam', cursive;
+  }
+  
+.product ul{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    padding-inline-start: 0;
+  }
+  
+  .product h1{
+    text-align: center;
+  }
+  
+  .product li{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: solid 1px;
+    margin: 1rem;
+    height: 15rem;
+    width: 10rem;
+    background-color: beige;
+    padding: 3px;
+    border-radius: 2%;
+    justify-content: space-evenly ;
+  }
+  
+  .product li:hover{
+    background-color:rgb(180, 180, 148) ;
+    padding: 10px;
+  }
+  
+  .product .link{
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    text-align: center;
+  }
+  .product button{
+    grid-row-start: 7;
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+  
+  .product-image{
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    object-fit:scale-down;
+  }
+  

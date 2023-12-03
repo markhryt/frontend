@@ -1,0 +1,8 @@
+.orders li{
+    list-style: none;
+    padding-top: 3%;
+    border-top: #555 solid 1px;
+  }
+  .orders a{
+    color: black;
+  }

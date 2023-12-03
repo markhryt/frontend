@@ -1,0 +1,61 @@
+
+.account-page ul{
+    padding-inline-start: 0;
+    text-align: center;
+  }
+  
+  .account-page h2{
+    text-align: center;
+  }
+  .account-page h1{
+    text-align: center;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+  }
+  
+  .account-page  a:visited{
+    color:rgb(0, 0, 0);
+  }
+  
+  .account-page li{
+    list-style: none;
+    margin: 2rem;
+    font-size: large;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    color:rgb(0, 0, 0);
+  }
+  
+  .account-info{
+    text-align: center;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr;
+    width:100%;
+  }
+  
+  .account-info h1{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .account-info ul{
+    grid-row-start: 2;
+    grid-column-start: 3;
+    justify-self: center;
+    align-self: center;
+  
+  }
+  
+  .account-info li{
+    list-style: none;
+    margin: 2rem;
+    font-size: large;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    color:rgb(0, 0, 0);
+  }
+  

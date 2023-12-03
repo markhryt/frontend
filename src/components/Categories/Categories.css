@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Merriweather&family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap');
+
+  .categories{
+    font-family: 'Kalam', cursive;
+  }
+  
+  .categories li{
+    list-style: none;
+    margin: 2rem;
+    font-size: large;
+    font-weight: 800;
+    color:rgb(48, 225, 225);
+  }
+  
+  .categories a:hover{
+    color:rgb(53, 198, 198);
+  }
+  
+  .categories a:visited{
+    color:rgb(132, 161, 248);
+  }

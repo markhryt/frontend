@@ -26,64 +26,81 @@ export default function RegistrationForm() {
     };
     if(isLoggedIn){
       return(
-        <div>
+        <div className='text-center'>
           <h1>You are Logged In</h1>
+          <Link to = "/">Home</Link>
         </div>
       )
     }
     return (
-    <div className='register-page'>
-      <form onSubmit={handleSubmit}>
-        <ul className='registration-form'>
-        <h1>Register</h1>
-        <li>
-        <label htmlFor="email">Email:*</label>
-        <br/>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required />
-        </li>
-   
-        <li>
-        <label htmlFor="full_name">Full Name: *</label>
-        <br/>
-        <input
-          type="text"
-          id="full_name"
-          name="full_name"
-          required/>
-        </li>
- 
-        <li>
-        <label htmlFor="address">Address:</label>
-        <br/>
-        <input
-          type="text"
-          id="address"
-          name="address"
-        />
-        </li>
-
-        <li>
-        <label htmlFor="password">Password:*</label>
-        <br/>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-        />
-        </li>
-
-        <button type="submit">Register</button>
-        <p>Already got an account?</p>
-      <Link to="/login">Login</Link>
-        </ul>
+      <div className="login-page">
+      <form onSubmit={handleSubmit} className="login-form container">
+          <ul>
+              <li className = "row"> 
+                  <h1 className = "text-center mb-5">Sign Up</h1>
+              </li>
+              <li className = "row">
+              <label htmlFor="email" className="form-label">Email:</label>
+             </li>
+             <li class = "row">
+                  <span className = "col"></span>
+                  <input type="email" 
+                  className="form-control form-control-lg col" 
+                  id="email" name="email" 
+                  required />
+                  <span className = "col"></span>
+              </li>
+              <li className = "row">
+                <label htmlFor="full_name" className= "form-label">Full Name:</label>
+                <br/>
+              </li>
+              <li className = "row">
+                  <span class = "col"></span>
+                    <input
+                  className="form-control form-control-lg col"
+                  type="text"
+                  id="full_name"
+                  name="full_name"
+                  required/>
+                  <span class = "col"></span>
+              </li>
+              <li className = "row">
+                <label htmlFor="address" className= "form-label">Address: </label>
+                <br/>
+              </li>
+              <li class = "row">
+                  <span className = "col"></span>
+                    <input
+                    className="form-control form-control-lg col"
+                    type="text"
+                    id="address"
+                    name="address"
+                    required/>
+                  <span class = "col"></span>
+              </li>
+              <li className = "row">
+              <label htmlFor="password" className="form-label">Password:</label>
+              <br/>
+              </li>
+              <li className = "row">
+                  <span className = "col"></span>
+                  <input type="password" 
+                  id="password" className="form-control form-control-lg col" 
+                  name="password" 
+                  required />
+                  <span className = "col"></span>
+              </li>
+              <li>
+                  <button type="submit" className="btn btn-outline-success mb-2">Sign Up</button>
+              </li>
+              <li >
+                  <p>Already got an account?</p>
+              </li>
+              <li >
+                  <Link to = '/login'>Login</Link>
+              </li>
+          </ul>
       </form>
-
-
-    </div>
+  </div> 
   );
 }

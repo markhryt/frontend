@@ -1,0 +1,44 @@
+.verify-email{
+    text-align: center;
+    height: 20rem;
+  }
+  
+  .verify-email form{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+  }
+  
+  .verify-email label{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    font-size: large;
+    align-self: flex-end;
+  }
+  
+  .verify-email #code{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 80%;
+    height: 30%;
+    align-self: center;
+    justify-self: center;
+    border: 1.3px solid black;
+    border-radius: 5%;
+  }
+  
+  input[type=number]:focus {
+    border: 3px solid #555;
+    padding: 3px;
+  }
+  
+  .verify-email button{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    width: 50%;
+    height: 40%;
+    align-self: flex-start;
+    justify-self: center;
+  }
+  

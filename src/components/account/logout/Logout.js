@@ -16,7 +16,7 @@ export default function Logout(){
     }
     if(!isLoggedIn){
         return(
-            <div>
+            <div className="text-center">
                 <h1>You are not authenticated</h1>
                 <Link to = '/login'>Login</Link>
             </div>
@@ -24,9 +24,9 @@ export default function Logout(){
 
     }
     return(
-        <div className="logout-page">
-            <h1>Are you sure you want to log out?</h1>
-            <button onClick={handleSubmit}>Log out</button>
+        <div className="logout-page text-center">
+            <h1 className="mb-5">Are you sure you want to log out?</h1>
+            <button className="btn btn-lg btn-danger" onClick={handleSubmit}>Log out</button>
         </div>
     )
 }

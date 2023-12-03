@@ -3,6 +3,7 @@ import { selectCategories, fetchCategories } from "./CategoriesSlice"
 import { useEffect } from "react"
 import { Link } from "react-router-dom";
 import { fetchProductsByCategory } from "../ProductsList/ProductListSlice";
+import "./Categories.css"
 export default function Categories(){
     const dispatch = useDispatch();
     let categories = useSelector(selectCategories);
@@ -11,9 +12,10 @@ export default function Categories(){
     },[dispatch])
     try{
         return(
-            <div className="categories">
-                <h1>Categories</h1>
+            <div className="categories text-center">
                 <ul>
+                    <h1>Categories</h1>
+                    <br/>
                     {categories.map(element=><li key = {element.id} onClick={()=>dispatch(fetchProductsByCategory(element.id))}>
                     <Link to = {`${element.id}?category=${element.name}`}>{element.name}</Link></li>)}
                 </ul>
